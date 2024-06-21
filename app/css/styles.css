@@ -63,15 +63,25 @@ body {
 
 .main {
   grid-area: main;
+  position: relative;
 }
-.main__imagens {
+
+/* Imagens decorativas da versão desktop */
+.imagens {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url(images/bg-pattern-intro-right-desktop.svg), url(images/bg-pattern-intro-left-desktop.svg);
-  background-repeat: no-repeat;
-  background-position: right top, left 25%;
-  z-index: 3;
+  margin: 0;
+}
+.imagens__bg-right {
+  position: absolute;
+  top: -100%;
+  right: 0;
+}
+.imagens__bg-left {
+  position: absolute;
+  top: -30%;
+  left: 0;
 }
 
 .footer {
@@ -103,7 +113,7 @@ body {
   padding-right: 2rem;
   transition: color 0.3s ease-in-out;
 }
-.nav__li:hover, .nav__li:focus {
+.nav__li:hover {
   color: #2b272f;
 }
 .nav__button {
@@ -118,7 +128,7 @@ body {
   background-color: #fafafa;
   transition: all 0.3s ease-in-out;
 }
-.nav__button:hover, .nav__button:focus {
+.nav__button:hover {
   border: 2px solid #2d2640;
   color: #fafafa;
   background-color: #2d2640;
@@ -166,12 +176,13 @@ body {
   color: #fafafa;
   background-color: #2d2640;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
   margin-bottom: 8.88vw;
+  z-index: 2;
 }
-.section-1__button:hover, .section-1__button:focus {
-  border: 2px solid #fafafa;
-  color: #2d2640;
+.section-1__button:hover {
   background-color: #fafafa;
+  color: #2d2640;
 }
 .section-1__imagem--intro {
   position: relative;
@@ -231,14 +242,11 @@ body {
   color: #2b272f;
 }
 .section-2__box {
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 0 1.5rem;
-  background-image: url(images/bg-pattern-how-we-work-desktop.svg);
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: contain;
 }
 .section-2__subtitulo--h2 {
   font-size: clamp(2.4rem, 3.33vw, 6.66vw);
@@ -247,6 +255,11 @@ body {
   color: #fafafa;
   line-height: 1;
   margin-top: -1rem;
+}
+.section-2__bg-box {
+  position: absolute;
+  height: 100%;
+  right: 0;
 }
 .section-2__button {
   text-transform: uppercase;
@@ -259,14 +272,16 @@ body {
   color: #fafafa;
   background-color: #2d2640;
   transition: all 0.3s ease-in-out;
+  z-index: 2;
 }
-.section-2__button:hover, .section-2__button:focus {
+.section-2__button:hover {
   border: 2px solid #2d2640;
   color: #2d2640;
   background-color: #fafafa;
 }
 
 .footer {
+  position: relative;
   display: grid;
   grid-template-columns: 11.5vw 11.68vw 7.57vw 11.68vw 7.57vw 11.68vw 7.57vw 11.68vw 7.57vw 11.5vw;
   grid-template-rows: 7.91vw 19.09vw;
@@ -337,6 +352,12 @@ body {
   color: #2d2640;
   padding: 0rem 0rem 0.5rem 0rem;
 }
+.footer__bg {
+  position: absolute;
+  top: 0;
+  right: 50;
+  opacity: 50%;
+}
 
 @media only screen and (max-width: 950px) {
   .container-grid {
@@ -347,7 +368,7 @@ body {
   }
   .header {
     grid-area: header;
-    z-index: 0;
+    z-index: 3;
   }
   .nav {
     display: flex;
@@ -399,7 +420,7 @@ body {
     background-color: #2b272f;
     transition: all 0.3s ease-in-out;
   }
-  .nav__button:hover, .nav__button:focus {
+  .nav__button:hover {
     border: 2px solid #2d2640;
     color: #2d2640;
     background-color: #fafafa;
@@ -465,9 +486,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url(images/bg-pattern-intro-right-mobile.svg), url(images/bg-pattern-intro-left-mobile.svg);
-    background-repeat: no-repeat;
-    background-position: right 190%, top left;
   }
   .section-1__moldura {
     display: none;
