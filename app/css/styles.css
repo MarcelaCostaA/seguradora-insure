@@ -397,16 +397,13 @@ body {
     padding-top: 2rem;
     background-color: #2b272f;
     transition: all 0.3s ease-in-out;
-    background-image: url(images/bg-pattern-mobile-nav.svg);
-    background-repeat: no-repeat;
-    background-position: 50% 100%;
   }
   .nav__menu.active {
     right: 0;
   }
   .nav__li {
     font-size: 1.25rem;
-    padding: 1.75rem 2.5rem 1.75rem 0rem;
+    padding: 1.75rem 5rem 1.75rem 2.5rem;
     width: 100vw;
     color: #fafafa;
   }
@@ -511,13 +508,13 @@ body {
   .imagens__bg-right--mobile {
     display: block;
     position: absolute;
-    top: -100%;
+    top: 21%;
     right: 0;
   }
   .imagens__bg-left--mobile {
     display: block;
     position: absolute;
-    top: -30%;
+    top: 11.9%;
     left: 0;
   }
   .section-2 {
@@ -588,6 +585,7 @@ body {
   }
   .section-2__subtitulo--h2 {
     padding-bottom: 3rem;
+    z-index: 1;
   }
   .footer {
     grid-area: footer;
